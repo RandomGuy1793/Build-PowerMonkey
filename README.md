@@ -66,3 +66,11 @@ Then reboot the system and enter the bios, you should see there's an new option 
 
 From within the BIOS.
 - Turn off `Secure Boot`
+
+### Note
+
+If accidently Windows Boot Manager entry gets deleted, it can be restored by going to Advanced startup menu and opening cmd prompt and executing following command.
+
+```
+bcdboot.exe c:\windows
+```
