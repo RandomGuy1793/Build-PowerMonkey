@@ -8,7 +8,7 @@ git submodule update --init
 cd ..
 
 REM Download PowerMonkey
-git clone https://github.com/psyq321/PowerMonkey.git
+git clone https://github.com/RandomGuy1793/PowerMonkey.git
 copy PowerMonkey\PowerMonkeyApp\CONFIGURATION.c .
 move PowerMonkey\PowerMonkeyApp edk2\MdeModulePkg\Application
 powershell -command "(gc edk2/MdeModulePkg/MdeModulePkg.dsc).replace('/HelloWorld.inf', \"/HelloWorld.inf`r`n  MdeModulePkg/Application/PowerMonkeyApp/PowerMonkey.inf`r`n\") | Set-Content edk2/MdeModulePkg/MdeModulePkg.dsc"
@@ -54,6 +54,8 @@ set PYTHONPATH=%cd%\python
 set PYTHON_COMMAND=%cd%\python\python.exe
 set PATH=%cd%\python;%PATH%
 set NASM_PREFIX=%cd%\nasm\
+set EDK_TOOLS_BIN=%cd%\edk2\BaseTools\Bin\Win32
+
 cd edk2
 python -m pip install -r pip-requirements.txt
 edksetup.bat Rebuild
